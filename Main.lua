@@ -36,7 +36,7 @@ local settings = {
 
     --
 
-    fov = 350,
+    fov = 250,
     fovcircle = true,
     fovsides = 12,
     fovthickness = 1
@@ -1418,7 +1418,7 @@ local boxes = {} do
     boxes_settings.enabled = settings:Get("boxes.enabled", true)
     boxes_settings.transparency = settings:Get("boxes.transparency", .2)
     boxes_settings.thickness = settings:Get("boxes.thickness", 1.5)
-    boxes_settings.showteam = settings:Get("boxes.showteam", false)
+    boxes_settings.showteam = settings:Get("boxes.showteam", true)
 
     boxes_settings.teamcolor = Color3.fromRGB(155, 114, 170) -- 121,255,97,  57,255,20
     boxes_settings.enemycolor = Color3.fromRGB(220,20,60) -- 238,38,37, 255,0,13, 255,7,58
@@ -1520,7 +1520,7 @@ local boxes = {} do
             if dist > boxes.drawdistance then
                 return boxes:Remove(player)
             elseif _3dimension and dist > boxes.dist3d then
-                _3dimension = false
+                _3dimension = true
             end
         end
 
